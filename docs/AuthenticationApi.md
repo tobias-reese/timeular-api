@@ -1,4 +1,4 @@
-# swagger_client.AuthenticationApi
+# timular-api.AuthenticationApi
 
 All URIs are relative to *https://api.timeular.com/api/v1/*
 
@@ -20,13 +20,13 @@ With this endpoint you can obtain Access Token required to access secured endpoi
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
-api_key_and_api_secret = swagger_client.DeveloperSignInRequest() # DeveloperSignInRequest | API Key and API Secret (optional)
+api_instance = timular-api.AuthenticationApi()
+api_key_and_api_secret = timular-api.DeveloperSignInRequest() # DeveloperSignInRequest | API Key and API Secret (optional)
 
 try:
     # Sign-in with API Key & API Secret
@@ -68,18 +68,18 @@ With this endpoint you can fetch your API Key (or `null` if you haven't generate
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.AuthenticationApi(timular-api.ApiClient(configuration))
 
 try:
     # Fetch API Key
@@ -118,18 +118,18 @@ With this endpoint you can generate new pair of API Key & API Secret. Every time
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.AuthenticationApi(timular-api.ApiClient(configuration))
 
 try:
     # Generate new API Key & API Secret

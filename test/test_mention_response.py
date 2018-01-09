@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.mention_response import MentionResponse  # noqa: E501
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.models.mention_response import MentionResponse  # noqa: E501
+from timular-api.rest import ApiException
 
 
 class TestMentionResponse(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestMentionResponse(unittest.TestCase):
     def testMentionResponse(self):
         """Test MentionResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.mention_response.MentionResponse()  # noqa: E501
+        # model = timular-api.models.mention_response.MentionResponse()  # noqa: E501
         pass
 
 

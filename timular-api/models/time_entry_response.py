@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.time_entry_activity_response import TimeEntryActivityResponse  # noqa: F401,E501
-from swagger_client.models.time_entry_duration_response import TimeEntryDurationResponse  # noqa: F401,E501
+from timular-api.models.time_entry_activity_response import TimeEntryActivityResponse  # noqa: F401,E501
+from timular-api.models.time_entry_duration_response import TimeEntryDurationResponse  # noqa: F401,E501
 
 
 class TimeEntryResponse(object):

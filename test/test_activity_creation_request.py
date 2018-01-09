@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.activity_creation_request import ActivityCreationRequest  # noqa: E501
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.models.activity_creation_request import ActivityCreationRequest  # noqa: E501
+from timular-api.rest import ApiException
 
 
 class TestActivityCreationRequest(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestActivityCreationRequest(unittest.TestCase):
     def testActivityCreationRequest(self):
         """Test ActivityCreationRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.activity_creation_request.ActivityCreationRequest()  # noqa: E501
+        # model = timular-api.models.activity_creation_request.ActivityCreationRequest()  # noqa: E501
         pass
 
 

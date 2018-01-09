@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.started_tracking_response import StartedTrackingResponse  # noqa: E501
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.models.started_tracking_response import StartedTrackingResponse  # noqa: E501
+from timular-api.rest import ApiException
 
 
 class TestStartedTrackingResponse(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestStartedTrackingResponse(unittest.TestCase):
     def testStartedTrackingResponse(self):
         """Test StartedTrackingResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.started_tracking_response.StartedTrackingResponse()  # noqa: E501
+        # model = timular-api.models.started_tracking_response.StartedTrackingResponse()  # noqa: E501
         pass
 
 

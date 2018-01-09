@@ -1,4 +1,4 @@
-# swagger_client.TimeTrackingDevicesApi
+# timular-api.TimeTrackingDevicesApi
 
 All URIs are relative to *https://api.timeular.com/api/v1/*
 
@@ -22,18 +22,18 @@ Activate a Device
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingDevicesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:
@@ -76,20 +76,20 @@ With this endpoint you can set name of your Device. Name is trimmed from leading
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingDevicesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
-properties_to_change = swagger_client.DeviceEditionRequest() # DeviceEditionRequest | properties to change (optional)
+properties_to_change = timular-api.DeviceEditionRequest() # DeviceEditionRequest | properties to change (optional)
 
 try:
     # Edit a Device
@@ -130,18 +130,18 @@ Deactivate a Device
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingDevicesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:
@@ -182,18 +182,18 @@ Disable a Device
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingDevicesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:
@@ -234,18 +234,18 @@ Enable a Device
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingDevicesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:
@@ -288,18 +288,18 @@ With this endpoint you can remove a Device from list of known Devices. In order 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingDevicesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:
@@ -339,18 +339,18 @@ List all known Devices
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingDevicesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
 
 try:
     # List all known Devices

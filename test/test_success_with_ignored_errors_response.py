@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.success_with_ignored_errors_response import SuccessWithIgnoredErrorsResponse  # noqa: E501
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.models.success_with_ignored_errors_response import SuccessWithIgnoredErrorsResponse  # noqa: E501
+from timular-api.rest import ApiException
 
 
 class TestSuccessWithIgnoredErrorsResponse(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestSuccessWithIgnoredErrorsResponse(unittest.TestCase):
     def testSuccessWithIgnoredErrorsResponse(self):
         """Test SuccessWithIgnoredErrorsResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.success_with_ignored_errors_response.SuccessWithIgnoredErrorsResponse()  # noqa: E501
+        # model = timular-api.models.success_with_ignored_errors_response.SuccessWithIgnoredErrorsResponse()  # noqa: E501
         pass
 
 

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.developer_api_access_response import DeveloperApiAccessResponse  # noqa: E501
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.models.developer_api_access_response import DeveloperApiAccessResponse  # noqa: E501
+from timular-api.rest import ApiException
 
 
 class TestDeveloperApiAccessResponse(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestDeveloperApiAccessResponse(unittest.TestCase):
     def testDeveloperApiAccessResponse(self):
         """Test DeveloperApiAccessResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.developer_api_access_response.DeveloperApiAccessResponse()  # noqa: E501
+        # model = timular-api.models.developer_api_access_response.DeveloperApiAccessResponse()  # noqa: E501
         pass
 
 

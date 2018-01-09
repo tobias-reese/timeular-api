@@ -1,4 +1,4 @@
-# swagger_client.TimeTrackingActivitiesApi
+# timular-api.TimeTrackingActivitiesApi
 
 All URIs are relative to *https://api.timeular.com/api/v1/*
 
@@ -23,18 +23,18 @@ Archive an Activity
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingActivitiesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingActivitiesApi(timular-api.ApiClient(configuration))
 activity_id = 'activity_id_example' # str | ID of an Activity, eg. `123`
 
 try:
@@ -77,18 +77,18 @@ With this endpoint you can assign an Activity to any Side of your *active* Devic
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingActivitiesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingActivitiesApi(timular-api.ApiClient(configuration))
 activity_id = 'activity_id_example' # str | ID of an Activity, eg. `123`
 device_side = 8.14 # float | Side of an active Device
 
@@ -133,19 +133,19 @@ With this endpoint you can create a new Activity. It should have name and color.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingActivitiesApi(swagger_client.ApiClient(configuration))
-properties_of_a_new_activity = swagger_client.ActivityCreationRequest() # ActivityCreationRequest | properties of a new Activity (optional)
+api_instance = timular-api.TimeTrackingActivitiesApi(timular-api.ApiClient(configuration))
+properties_of_a_new_activity = timular-api.ActivityCreationRequest() # ActivityCreationRequest | properties of a new Activity (optional)
 
 try:
     # Create an Activity
@@ -185,20 +185,20 @@ Edit an Activity
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingActivitiesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingActivitiesApi(timular-api.ApiClient(configuration))
 activity_id = 'activity_id_example' # str | ID of an Activity, eg. `123`
-properties_to_change = swagger_client.ActivityEditionRequest() # ActivityEditionRequest | properties to change (optional)
+properties_to_change = timular-api.ActivityEditionRequest() # ActivityEditionRequest | properties to change (optional)
 
 try:
     # Edit an Activity
@@ -239,18 +239,18 @@ List all Activities
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingActivitiesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingActivitiesApi(timular-api.ApiClient(configuration))
 
 try:
     # List all Activities
@@ -287,18 +287,18 @@ List all Archived Activities
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingActivitiesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingActivitiesApi(timular-api.ApiClient(configuration))
 
 try:
     # List all Archived Activities
@@ -337,18 +337,18 @@ Tags and Mentions are created with use of `#` and `@` prefixes in Notes of your 
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingActivitiesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingActivitiesApi(timular-api.ApiClient(configuration))
 activity_id = 'activity_id_example' # str | ID of an Activity, eg. `123`
 
 try:
@@ -391,18 +391,18 @@ With this endpoint you can unassign an Activity from Side of your active Device.
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingActivitiesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingActivitiesApi(timular-api.ApiClient(configuration))
 activity_id = 'activity_id_example' # str | ID of an Activity, eg. `123`
 device_side = 8.14 # float | Side of an active Device
 

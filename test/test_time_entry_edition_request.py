@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.time_entry_edition_request import TimeEntryEditionRequest  # noqa: E501
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.models.time_entry_edition_request import TimeEntryEditionRequest  # noqa: E501
+from timular-api.rest import ApiException
 
 
 class TestTimeEntryEditionRequest(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestTimeEntryEditionRequest(unittest.TestCase):
     def testTimeEntryEditionRequest(self):
         """Test TimeEntryEditionRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.time_entry_edition_request.TimeEntryEditionRequest()  # noqa: E501
+        # model = timular-api.models.time_entry_edition_request.TimeEntryEditionRequest()  # noqa: E501
         pass
 
 

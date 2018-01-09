@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.integrations_api import IntegrationsApi  # noqa: E501
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.api.integrations_api import IntegrationsApi  # noqa: E501
+from timular-api.rest import ApiException
 
 
 class TestIntegrationsApi(unittest.TestCase):
     """IntegrationsApi unit test stubs"""
 
     def setUp(self):
-        self.api = swagger_client.api.integrations_api.IntegrationsApi()  # noqa: E501
+        self.api = timular-api.api.integrations_api.IntegrationsApi()  # noqa: E501
 
     def tearDown(self):
         pass

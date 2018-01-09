@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.activity_edition_request import ActivityEditionRequest  # noqa: E501
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.models.activity_edition_request import ActivityEditionRequest  # noqa: E501
+from timular-api.rest import ApiException
 
 
 class TestActivityEditionRequest(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestActivityEditionRequest(unittest.TestCase):
     def testActivityEditionRequest(self):
         """Test ActivityEditionRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.activity_edition_request.ActivityEditionRequest()  # noqa: E501
+        # model = timular-api.models.activity_edition_request.ActivityEditionRequest()  # noqa: E501
         pass
 
 

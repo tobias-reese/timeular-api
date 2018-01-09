@@ -1,4 +1,4 @@
-# swagger_client.TimeTrackingTimeEntriesApi
+# timular-api.TimeTrackingTimeEntriesApi
 
 All URIs are relative to *https://api.timeular.com/api/v1/*
 
@@ -22,19 +22,19 @@ With this endpoint you can create a new Time Entry. It should be connected to an
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingTimeEntriesApi(swagger_client.ApiClient(configuration))
-properties_of_a_new_time_entry = swagger_client.TimeEntryCreationRequest() # TimeEntryCreationRequest | properties of a new Time Entry (optional)
+api_instance = timular-api.TimeTrackingTimeEntriesApi(timular-api.ApiClient(configuration))
+properties_of_a_new_time_entry = timular-api.TimeEntryCreationRequest() # TimeEntryCreationRequest | properties of a new Time Entry (optional)
 
 try:
     # Create Time Entry
@@ -74,18 +74,18 @@ Delete a Time Entry
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingTimeEntriesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingTimeEntriesApi(timular-api.ApiClient(configuration))
 time_entry_id = 'time_entry_id_example' # str | ID of an Activity, eg. `987`
 
 try:
@@ -128,20 +128,20 @@ With this endpoint you can edit existing Time Entry. When changing Activity ID p
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingTimeEntriesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingTimeEntriesApi(timular-api.ApiClient(configuration))
 time_entry_id = 'time_entry_id_example' # str | ID of an Activity, eg. `987`
-properties_to_change = swagger_client.TimeEntryEditionRequest() # TimeEntryEditionRequest | properties to change (optional)
+properties_to_change = timular-api.TimeEntryEditionRequest() # TimeEntryEditionRequest | properties to change (optional)
 
 try:
     # Edit a Time Entry
@@ -184,18 +184,18 @@ Find Time Entries which have at least one millisecond in common with provided ti
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingTimeEntriesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingTimeEntriesApi(timular-api.ApiClient(configuration))
 stopped_after = 'stopped_after_example' # str | Timestamp which matches all Time Entries stopped after it. Eg. `2017-01-01T00:00:00.000`.
 started_before = 'started_before_example' # str | Timestamp which matches all Time Entries started before it. Eg. `2017-12-31T23:59:59.999`.
 
@@ -238,18 +238,18 @@ Find Time Entry by its ID
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import timular-api
+from timular-api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = swagger_client.Configuration()
+configuration = timular-api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.TimeTrackingTimeEntriesApi(swagger_client.ApiClient(configuration))
+api_instance = timular-api.TimeTrackingTimeEntriesApi(timular-api.ApiClient(configuration))
 time_entry_id = 'time_entry_id_example' # str | ID of an Activity, eg. `987`
 
 try:
