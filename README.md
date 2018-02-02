@@ -23,7 +23,7 @@ pip install git+https://github.com/tobias-reese/timular-api.git
 
 Then import the package:
 ```python
-import timular-api 
+import timular_api 
 ```
 
 ### Setuptools
@@ -37,7 +37,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import timular-api
+import timular_api
 ```
 
 ## Getting Started
@@ -47,12 +47,12 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 # create an instance of the API class
-api_instance = timular-api.AuthenticationApi()
-api_key_and_api_secret = timular-api.DeveloperSignInRequest() # DeveloperSignInRequest | API Key and API Secret (optional)
+api_instance = timular_api.AuthenticationApi()
+api_key_and_api_secret = timular_api.DeveloperSignInRequest() # DeveloperSignInRequest | API Key and API Secret (optional)
 
 try:
     # Sign-in with API Key & API Secret

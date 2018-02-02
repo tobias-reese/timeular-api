@@ -1,4 +1,4 @@
-# timular-api.TimeTrackingTagsMentionsApi
+# timular_api.TimeTrackingTagsMentionsApi
 
 All URIs are relative to *https://api.timeular.com/api/v2/*
 
@@ -18,18 +18,18 @@ Tags and Mentions are created with the use of an explicit reference  with the No
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingTagsMentionsApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingTagsMentionsApi(timular_api.ApiClient(configuration))
 activity_id = 'activity_id_example' # str | ID of an Activity, eg. `123` (optional)
 
 try:

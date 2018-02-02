@@ -23,9 +23,9 @@ import tempfile
 import six
 from six.moves.urllib.parse import quote
 
-from timular-api.configuration import Configuration
-import timular-api.models
-from timular-api import rest
+from timular_api.configuration import Configuration
+import timular_api.models
+from timular_api import rest
 
 
 class ApiClient(object):
@@ -258,7 +258,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(timular-api.models, klass)
+                klass = getattr(timular_api.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

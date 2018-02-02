@@ -1,4 +1,4 @@
-# timular-api.TimeTrackingReportsApi
+# timular_api.TimeTrackingReportsApi
 
 All URIs are relative to *https://api.timeular.com/api/v2/*
 
@@ -18,18 +18,18 @@ Generates Report in CSV which contains all the Time Entries from inside given ti
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingReportsApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingReportsApi(timular_api.ApiClient(configuration))
 start_timestamp = 'start_timestamp_example' # str | eg. `2016-01-01T00:00:00.000`
 stop_timestamp = 'stop_timestamp_example' # str | eg. `2017-12-31T23:59:59.999`
 timezone = 'timezone_example' # str | Time-zone in which `StartDate` and `EndDate` columns will be shown, eg. `Europe/Berlin`. It honors Daylight Saving Time changes of given region. 

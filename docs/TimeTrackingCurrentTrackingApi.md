@@ -1,4 +1,4 @@
-# timular-api.TimeTrackingCurrentTrackingApi
+# timular_api.TimeTrackingCurrentTrackingApi
 
 All URIs are relative to *https://api.timeular.com/api/v2/*
 
@@ -21,20 +21,20 @@ With this endpoint, you can set/edit/remove Note of current Tracking. To remove 
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingCurrentTrackingApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingCurrentTrackingApi(timular_api.ApiClient(configuration))
 activity_id = 'activity_id_example' # str | ID of an Activity on which you are tracking time, eg. `123`
-changed_note_of_a_tracking = timular-api.EditTrackingRequest() # EditTrackingRequest | changed note of a Tracking (optional)
+changed_note_of_a_tracking = timular_api.EditTrackingRequest() # EditTrackingRequest | changed note of a Tracking (optional)
 
 try:
     # Edit Tracking
@@ -75,18 +75,18 @@ Show current Tracking
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingCurrentTrackingApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingCurrentTrackingApi(timular_api.ApiClient(configuration))
 
 try:
     # Show current Tracking
@@ -123,20 +123,20 @@ Start Tracking
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingCurrentTrackingApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingCurrentTrackingApi(timular_api.ApiClient(configuration))
 activity_id = 'activity_id_example' # str | ID of an Activity on which you want to track time, eg. `123`
-start_timestamp_of_a_tracking = timular-api.StartTrackingRequest() # StartTrackingRequest | start timestamp of a Tracking (optional)
+start_timestamp_of_a_tracking = timular_api.StartTrackingRequest() # StartTrackingRequest | start timestamp of a Tracking (optional)
 
 try:
     # Start Tracking
@@ -179,20 +179,20 @@ With this endpoint, you can create a new Time Entry by stopping current time Tra
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingCurrentTrackingApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingCurrentTrackingApi(timular_api.ApiClient(configuration))
 activity_id = 'activity_id_example' # str | ID of an Activity on which you are tracking time, eg. `123`
-stop_timestamp_of_a_tracking = timular-api.StopTrackingRequest() # StopTrackingRequest | stop timestamp of a Tracking (optional)
+stop_timestamp_of_a_tracking = timular_api.StopTrackingRequest() # StopTrackingRequest | stop timestamp of a Tracking (optional)
 
 try:
     # Stop Tracking

@@ -1,4 +1,4 @@
-# timular-api.TimeTrackingDevicesApi
+# timular_api.TimeTrackingDevicesApi
 
 All URIs are relative to *https://api.timeular.com/api/v2/*
 
@@ -22,18 +22,18 @@ Sets the status of a Device to active
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingDevicesApi(timular_api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:
@@ -74,18 +74,18 @@ Removes the active status from the given Device
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingDevicesApi(timular_api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:
@@ -126,18 +126,18 @@ Disable a Device
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingDevicesApi(timular_api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:
@@ -180,20 +180,20 @@ With this endpoint, you can set a name of your Device. The Name is trimmed autom
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingDevicesApi(timular_api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
-properties_to_change = timular-api.DeviceEditionRequest() # DeviceEditionRequest | properties to change (optional)
+properties_to_change = timular_api.DeviceEditionRequest() # DeviceEditionRequest | properties to change (optional)
 
 try:
     # Edit a Device
@@ -234,18 +234,18 @@ Enable a Device
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingDevicesApi(timular_api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:
@@ -286,18 +286,18 @@ List all known Devices
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingDevicesApi(timular_api.ApiClient(configuration))
 
 try:
     # List all known Devices
@@ -336,18 +336,18 @@ With this endpoint, you can remove a Device from list of known Devices. In order
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.TimeTrackingDevicesApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.TimeTrackingDevicesApi(timular_api.ApiClient(configuration))
 device_serial = 'device_serial_example' # str | Serial number of a Device
 
 try:

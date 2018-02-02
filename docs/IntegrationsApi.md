@@ -1,4 +1,4 @@
-# timular-api.IntegrationsApi
+# timular_api.IntegrationsApi
 
 All URIs are relative to *https://api.timeular.com/api/v2/*
 
@@ -18,18 +18,18 @@ With this endpoint you can list names of all Integrations you have enabled on [P
 ```python
 from __future__ import print_function
 import time
-import timular-api
-from timular-api.rest import ApiException
+import timular_api
+from timular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
+configuration = timular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular-api.IntegrationsApi(timular-api.ApiClient(configuration))
+api_instance = timular_api.IntegrationsApi(timular_api.ApiClient(configuration))
 
 try:
     # List enabled Integrations
