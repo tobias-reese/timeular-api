@@ -3,7 +3,7 @@
 """
     Timeular Public API
 
-     Welcome to the documentation of Timeular Public API v1.  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `Bearer <your_access_token>` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
+     Welcome to the documentation of Timeular Public API v2. If you want to have a look at the older and deprecated API v1 please just click on the following link: [Timeular Public API v1](./?v=v1)  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `'Bearer *your_access_token*'` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
 
     OpenAPI spec version: 1
     
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from timular-api.models.note import Note  # noqa: F401,E501
 
 
 class TimeEntryCreationRequest(object):
@@ -34,30 +36,30 @@ class TimeEntryCreationRequest(object):
         'activity_id': 'str',
         'started_at': 'str',
         'stopped_at': 'str',
-        'name': 'str'
+        'note': 'Note'
     }
 
     attribute_map = {
         'activity_id': 'activityId',
         'started_at': 'startedAt',
         'stopped_at': 'stoppedAt',
-        'name': 'name'
+        'note': 'note'
     }
 
-    def __init__(self, activity_id=None, started_at=None, stopped_at=None, name=None):  # noqa: E501
+    def __init__(self, activity_id=None, started_at=None, stopped_at=None, note=None):  # noqa: E501
         """TimeEntryCreationRequest - a model defined in Swagger"""  # noqa: E501
 
         self._activity_id = None
         self._started_at = None
         self._stopped_at = None
-        self._name = None
+        self._note = None
         self.discriminator = None
 
         self.activity_id = activity_id
         self.started_at = started_at
         self.stopped_at = stopped_at
-        if name is not None:
-            self.name = name
+        if note is not None:
+            self.note = note
 
     @property
     def activity_id(self):
@@ -129,29 +131,25 @@ class TimeEntryCreationRequest(object):
         self._stopped_at = stopped_at
 
     @property
-    def name(self):
-        """Gets the name of this TimeEntryCreationRequest.  # noqa: E501
+    def note(self):
+        """Gets the note of this TimeEntryCreationRequest.  # noqa: E501
 
 
-        :return: The name of this TimeEntryCreationRequest.  # noqa: E501
-        :rtype: str
+        :return: The note of this TimeEntryCreationRequest.  # noqa: E501
+        :rtype: Note
         """
-        return self._name
+        return self._note
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this TimeEntryCreationRequest.
+    @note.setter
+    def note(self, note):
+        """Sets the note of this TimeEntryCreationRequest.
 
 
-        :param name: The name of this TimeEntryCreationRequest.  # noqa: E501
-        :type: str
+        :param note: The note of this TimeEntryCreationRequest.  # noqa: E501
+        :type: Note
         """
-        if name is not None and len(name) > 1000:
-            raise ValueError("Invalid value for `name`, length must be less than or equal to `1000`")  # noqa: E501
-        if name is not None and len(name) < 1:
-            raise ValueError("Invalid value for `name`, length must be greater than or equal to `1`")  # noqa: E501
 
-        self._name = name
+        self._note = note
 
     def to_dict(self):
         """Returns the model properties as a dict"""

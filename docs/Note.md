@@ -1,12 +1,11 @@
-# TimeEntryCreationRequest
+# Note
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activity_id** | **str** |  | 
-**started_at** | **str** |  | 
-**stopped_at** | **str** |  | 
-**note** | [**Note**](Note.md) |  | [optional] 
+**text** | **str** |  | [optional] 
+**tags** | [**list[NoteTag]**](NoteTag.md) |  | [optional] 
+**mentions** | [**list[NoteMention]**](NoteMention.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

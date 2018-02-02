@@ -3,7 +3,7 @@
 """
     Timeular Public API
 
-     Welcome to the documentation of Timeular Public API v1.  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `Bearer <your_access_token>` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
+     Welcome to the documentation of Timeular Public API v2. If you want to have a look at the older and deprecated API v1 please just click on the following link: [Timeular Public API v1](./?v=v1)  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `'Bearer *your_access_token*'` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
 
     OpenAPI spec version: 1
     
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from timular-api.models.note import Note  # noqa: F401,E501
 
 
 class TimeEntryEditionRequest(object):
@@ -34,7 +36,7 @@ class TimeEntryEditionRequest(object):
         'activity_id': 'str',
         'started_at': 'str',
         'stopped_at': 'str',
-        'note': 'str'
+        'note': 'Note'
     }
 
     attribute_map = {
@@ -131,7 +133,7 @@ class TimeEntryEditionRequest(object):
 
 
         :return: The note of this TimeEntryEditionRequest.  # noqa: E501
-        :rtype: str
+        :rtype: Note
         """
         return self._note
 
@@ -141,7 +143,7 @@ class TimeEntryEditionRequest(object):
 
 
         :param note: The note of this TimeEntryEditionRequest.  # noqa: E501
-        :type: str
+        :type: Note
         """
 
         self._note = note

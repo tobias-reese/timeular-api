@@ -3,7 +3,7 @@
 """
     Timeular Public API
 
-     Welcome to the documentation of Timeular Public API v1.  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `Bearer <your_access_token>` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
+     Welcome to the documentation of Timeular Public API v2. If you want to have a look at the older and deprecated API v1 please just click on the following link: [Timeular Public API v1](./?v=v1)  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `'Bearer *your_access_token*'` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
 
     OpenAPI spec version: 1
     
@@ -36,7 +36,7 @@ class TimeTrackingTimeEntriesApi(object):
     def create_time_entry(self, **kwargs):  # noqa: E501
         """Create Time Entry  # noqa: E501
 
-        With this endpoint you can create a new Time Entry. It should be connected to an Activity and have duration no shorter than 1 minute. Note can be provided too, but it's not required. You can provide one or more Tags and Mentions in a Note, each of them prefixed with `#` or `@`. If related Activity is bound to some Integration, let's say JIRA Project, JIRA task IDs is a valid Tag too. Time Entry will be created even if it overlaps with other Time Entries – in result existing Time Entries will be split or deleted in such manner, that new one will fit without overlapping.  # noqa: E501
+        With this endpoint, you can create a new Time Entry. It should be connected to an Activity and have a duration no shorter than 1 minute. A Note can be provided too, but it's not required. Within this Note, you can  refer one or more Tags or Mentions, each of the prefixes must be  configured with the start and the end index within the Note text and can be  defined with a key. If key is not defined a random id will be generated and  assigned. If you are referring to an existing Tag or Mention you can provide that key  but the content of the Tag or Mention must be the same.  If the related Activity is bound to some Integration, let's say JIRA Project, JIRA task IDs is a valid Tag too. Time Entry will be created even if it overlaps with other Time Entries – in result existing Time Entries will be split or deleted in such manner, that new one will fit without overlapping.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.create_time_entry(async=True)
@@ -58,7 +58,7 @@ class TimeTrackingTimeEntriesApi(object):
     def create_time_entry_with_http_info(self, **kwargs):  # noqa: E501
         """Create Time Entry  # noqa: E501
 
-        With this endpoint you can create a new Time Entry. It should be connected to an Activity and have duration no shorter than 1 minute. Note can be provided too, but it's not required. You can provide one or more Tags and Mentions in a Note, each of them prefixed with `#` or `@`. If related Activity is bound to some Integration, let's say JIRA Project, JIRA task IDs is a valid Tag too. Time Entry will be created even if it overlaps with other Time Entries – in result existing Time Entries will be split or deleted in such manner, that new one will fit without overlapping.  # noqa: E501
+        With this endpoint, you can create a new Time Entry. It should be connected to an Activity and have a duration no shorter than 1 minute. A Note can be provided too, but it's not required. Within this Note, you can  refer one or more Tags or Mentions, each of the prefixes must be  configured with the start and the end index within the Note text and can be  defined with a key. If key is not defined a random id will be generated and  assigned. If you are referring to an existing Tag or Mention you can provide that key  but the content of the Tag or Mention must be the same.  If the related Activity is bound to some Integration, let's say JIRA Project, JIRA task IDs is a valid Tag too. Time Entry will be created even if it overlaps with other Time Entries – in result existing Time Entries will be split or deleted in such manner, that new one will fit without overlapping.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.create_time_entry_with_http_info(async=True)
@@ -137,7 +137,7 @@ class TimeTrackingTimeEntriesApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str time_entry_id: ID of an Activity, eg. `987` (required)
+        :param str time_entry_id: ID of a Time Entry, eg. `987` (required)
         :return: SuccessWithIgnoredErrorsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -158,7 +158,7 @@ class TimeTrackingTimeEntriesApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str time_entry_id: ID of an Activity, eg. `987` (required)
+        :param str time_entry_id: ID of a Time Entry, eg. `987` (required)
         :return: SuccessWithIgnoredErrorsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -228,14 +228,14 @@ class TimeTrackingTimeEntriesApi(object):
     def edit_time_entry(self, time_entry_id, **kwargs):  # noqa: E501
         """Edit a Time Entry  # noqa: E501
 
-        With this endpoint you can edit existing Time Entry. When changing Activity ID please note, that both new and old Activity attached to Time Entry have to belong to same Integration.  # noqa: E501
+        With this endpoint you can edit existing Time Entry. When changing Activity ID please note, that both new and old Activity attached to Time Entry have to belong to same Integration. To remove a Note, just set the complete object to null and all values  within the object will be deleted too.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.edit_time_entry(time_entry_id, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str time_entry_id: ID of an Activity, eg. `987` (required)
+        :param str time_entry_id: ID of a Time Entry, eg. `987` (required)
         :param TimeEntryEditionRequest properties_to_change: properties to change
         :return: TimeEntryResponse
                  If the method is called asynchronously,
@@ -251,14 +251,14 @@ class TimeTrackingTimeEntriesApi(object):
     def edit_time_entry_with_http_info(self, time_entry_id, **kwargs):  # noqa: E501
         """Edit a Time Entry  # noqa: E501
 
-        With this endpoint you can edit existing Time Entry. When changing Activity ID please note, that both new and old Activity attached to Time Entry have to belong to same Integration.  # noqa: E501
+        With this endpoint you can edit existing Time Entry. When changing Activity ID please note, that both new and old Activity attached to Time Entry have to belong to same Integration. To remove a Note, just set the complete object to null and all values  within the object will be deleted too.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.edit_time_entry_with_http_info(time_entry_id, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str time_entry_id: ID of an Activity, eg. `987` (required)
+        :param str time_entry_id: ID of a Time Entry, eg. `987` (required)
         :param TimeEntryEditionRequest properties_to_change: properties to change
         :return: TimeEntryResponse
                  If the method is called asynchronously,
@@ -444,7 +444,7 @@ class TimeTrackingTimeEntriesApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str time_entry_id: ID of an Activity, eg. `987` (required)
+        :param str time_entry_id: ID of a Time Entry, eg. `987` (required)
         :return: TimeEntryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -465,7 +465,7 @@ class TimeTrackingTimeEntriesApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str time_entry_id: ID of an Activity, eg. `987` (required)
+        :param str time_entry_id: ID of a Time Entry, eg. `987` (required)
         :return: TimeEntryResponse
                  If the method is called asynchronously,
                  returns the request thread.

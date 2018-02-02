@@ -1,6 +1,6 @@
 # timular-api.TimeTrackingReportsApi
 
-All URIs are relative to *https://api.timeular.com/api/v1/*
+All URIs are relative to *https://api.timeular.com/api/v2/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

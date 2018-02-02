@@ -3,7 +3,7 @@
 """
     Timeular Public API
 
-     Welcome to the documentation of Timeular Public API v1.  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `Bearer <your_access_token>` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
+     Welcome to the documentation of Timeular Public API v2. If you want to have a look at the older and deprecated API v1 please just click on the following link: [Timeular Public API v1](./?v=v1)  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `'Bearer *your_access_token*'` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
 
     OpenAPI spec version: 1
     
@@ -34,7 +34,7 @@ class TimeTrackingDevicesApi(object):
         self.api_client = api_client
 
     def activate_device(self, device_serial, **kwargs):  # noqa: E501
-        """Activate a Device  # noqa: E501
+        """Sets the status of a Device to active  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -55,7 +55,7 @@ class TimeTrackingDevicesApi(object):
             return data
 
     def activate_device_with_http_info(self, device_serial, **kwargs):  # noqa: E501
-        """Activate a Device  # noqa: E501
+        """Sets the status of a Device to active  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -132,113 +132,8 @@ class TimeTrackingDevicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def activate_device_0(self, device_serial, **kwargs):  # noqa: E501
-        """Edit a Device  # noqa: E501
-
-        With this endpoint you can set name of your Device. Name is trimmed from leading and trailing whitespaces. You can remove name from a Device by setting it null/blank/empty.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.activate_device_0(device_serial, async=True)
-        >>> result = thread.get()
-
-        :param async bool
-        :param str device_serial: Serial number of a Device (required)
-        :param DeviceEditionRequest properties_to_change: properties to change
-        :return: DeviceResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
-            return self.activate_device_0_with_http_info(device_serial, **kwargs)  # noqa: E501
-        else:
-            (data) = self.activate_device_0_with_http_info(device_serial, **kwargs)  # noqa: E501
-            return data
-
-    def activate_device_0_with_http_info(self, device_serial, **kwargs):  # noqa: E501
-        """Edit a Device  # noqa: E501
-
-        With this endpoint you can set name of your Device. Name is trimmed from leading and trailing whitespaces. You can remove name from a Device by setting it null/blank/empty.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.activate_device_0_with_http_info(device_serial, async=True)
-        >>> result = thread.get()
-
-        :param async bool
-        :param str device_serial: Serial number of a Device (required)
-        :param DeviceEditionRequest properties_to_change: properties to change
-        :return: DeviceResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['device_serial', 'properties_to_change']  # noqa: E501
-        all_params.append('async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method activate_device_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'device_serial' is set
-        if ('device_serial' not in params or
-                params['device_serial'] is None):
-            raise ValueError("Missing the required parameter `device_serial` when calling `activate_device_0`")  # noqa: E501
-
-        if 'device_serial' in params and not re.search('^[0-9A-Za-z-_.]{1,36}$', params['device_serial']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `device_serial` when calling `activate_device_0`, must conform to the pattern `/^[0-9A-Za-z-_.]{1,36}$/`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-        if 'device_serial' in params:
-            path_params['deviceSerial'] = params['device_serial']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'properties_to_change' in params:
-            body_params = params['properties_to_change']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json;charset=UTF-8'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['AuthorizationHeader']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/devices/{deviceSerial}', 'PATCH',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='DeviceResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async=params.get('async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def deactivate_device(self, device_serial, **kwargs):  # noqa: E501
-        """Deactivate a Device  # noqa: E501
+        """Removes the active status from the given Device  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -259,7 +154,7 @@ class TimeTrackingDevicesApi(object):
             return data
 
     def deactivate_device_with_http_info(self, device_serial, **kwargs):  # noqa: E501
-        """Deactivate a Device  # noqa: E501
+        """Removes the active status from the given Device  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -435,12 +330,117 @@ class TimeTrackingDevicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def eanble_device(self, device_serial, **kwargs):  # noqa: E501
+    def edit_device(self, device_serial, **kwargs):  # noqa: E501
+        """Edit a Device  # noqa: E501
+
+        With this endpoint, you can set a name of your Device. The Name is trimmed automatically from leading and trailing whitespaces. You can remove name from a Device by setting it to the value null,  blank or empty.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_device(device_serial, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str device_serial: Serial number of a Device (required)
+        :param DeviceEditionRequest properties_to_change: properties to change
+        :return: DeviceResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.edit_device_with_http_info(device_serial, **kwargs)  # noqa: E501
+        else:
+            (data) = self.edit_device_with_http_info(device_serial, **kwargs)  # noqa: E501
+            return data
+
+    def edit_device_with_http_info(self, device_serial, **kwargs):  # noqa: E501
+        """Edit a Device  # noqa: E501
+
+        With this endpoint, you can set a name of your Device. The Name is trimmed automatically from leading and trailing whitespaces. You can remove name from a Device by setting it to the value null,  blank or empty.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.edit_device_with_http_info(device_serial, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str device_serial: Serial number of a Device (required)
+        :param DeviceEditionRequest properties_to_change: properties to change
+        :return: DeviceResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['device_serial', 'properties_to_change']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method edit_device" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'device_serial' is set
+        if ('device_serial' not in params or
+                params['device_serial'] is None):
+            raise ValueError("Missing the required parameter `device_serial` when calling `edit_device`")  # noqa: E501
+
+        if 'device_serial' in params and not re.search('^[0-9A-Za-z-_.]{1,36}$', params['device_serial']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `device_serial` when calling `edit_device`, must conform to the pattern `/^[0-9A-Za-z-_.]{1,36}$/`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'device_serial' in params:
+            path_params['deviceSerial'] = params['device_serial']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'properties_to_change' in params:
+            body_params = params['properties_to_change']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json;charset=UTF-8'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['AuthorizationHeader']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/devices/{deviceSerial}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DeviceResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def enable_device(self, device_serial, **kwargs):  # noqa: E501
         """Enable a Device  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.eanble_device(device_serial, async=True)
+        >>> thread = api.enable_device(device_serial, async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -451,17 +451,17 @@ class TimeTrackingDevicesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.eanble_device_with_http_info(device_serial, **kwargs)  # noqa: E501
+            return self.enable_device_with_http_info(device_serial, **kwargs)  # noqa: E501
         else:
-            (data) = self.eanble_device_with_http_info(device_serial, **kwargs)  # noqa: E501
+            (data) = self.enable_device_with_http_info(device_serial, **kwargs)  # noqa: E501
             return data
 
-    def eanble_device_with_http_info(self, device_serial, **kwargs):  # noqa: E501
+    def enable_device_with_http_info(self, device_serial, **kwargs):  # noqa: E501
         """Enable a Device  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.eanble_device_with_http_info(device_serial, async=True)
+        >>> thread = api.enable_device_with_http_info(device_serial, async=True)
         >>> result = thread.get()
 
         :param async bool
@@ -482,17 +482,17 @@ class TimeTrackingDevicesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method eanble_device" % key
+                    " to method enable_device" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_serial' is set
         if ('device_serial' not in params or
                 params['device_serial'] is None):
-            raise ValueError("Missing the required parameter `device_serial` when calling `eanble_device`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_serial` when calling `enable_device`")  # noqa: E501
 
         if 'device_serial' in params and not re.search('^[0-9A-Za-z-_.]{1,36}$', params['device_serial']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `device_serial` when calling `eanble_device`, must conform to the pattern `/^[0-9A-Za-z-_.]{1,36}$/`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `device_serial` when calling `enable_device`, must conform to the pattern `/^[0-9A-Za-z-_.]{1,36}$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -527,107 +527,6 @@ class TimeTrackingDevicesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DeviceResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async=params.get('async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def forget_device(self, device_serial, **kwargs):  # noqa: E501
-        """Forget known Device  # noqa: E501
-
-        With this endpoint you can remove a Device from list of known Devices. In order to use it you have to make it active again with `POST` request to `/api/v1/devices/{deviceSerial}/active`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.forget_device(device_serial, async=True)
-        >>> result = thread.get()
-
-        :param async bool
-        :param str device_serial: Serial number of a Device (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
-            return self.forget_device_with_http_info(device_serial, **kwargs)  # noqa: E501
-        else:
-            (data) = self.forget_device_with_http_info(device_serial, **kwargs)  # noqa: E501
-            return data
-
-    def forget_device_with_http_info(self, device_serial, **kwargs):  # noqa: E501
-        """Forget known Device  # noqa: E501
-
-        With this endpoint you can remove a Device from list of known Devices. In order to use it you have to make it active again with `POST` request to `/api/v1/devices/{deviceSerial}/active`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.forget_device_with_http_info(device_serial, async=True)
-        >>> result = thread.get()
-
-        :param async bool
-        :param str device_serial: Serial number of a Device (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['device_serial']  # noqa: E501
-        all_params.append('async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method forget_device" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'device_serial' is set
-        if ('device_serial' not in params or
-                params['device_serial'] is None):
-            raise ValueError("Missing the required parameter `device_serial` when calling `forget_device`")  # noqa: E501
-
-        if 'device_serial' in params and not re.search('^[0-9A-Za-z-_.]{1,36}$', params['device_serial']):  # noqa: E501
-            raise ValueError("Invalid value for parameter `device_serial` when calling `forget_device`, must conform to the pattern `/^[0-9A-Za-z-_.]{1,36}$/`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-        if 'device_serial' in params:
-            path_params['deviceSerial'] = params['device_serial']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json;charset=UTF-8'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['AuthorizationHeader']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/devices/{deviceSerial}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -717,6 +616,107 @@ class TimeTrackingDevicesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DevicesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def remove_device(self, device_serial, **kwargs):  # noqa: E501
+        """Remove known Device  # noqa: E501
+
+        With this endpoint, you can remove a Device from list of known Devices. In order to remove the Device, you have to make it active again with `POST` request to `/api/v2//devices/{deviceSerial}/active`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.remove_device(device_serial, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str device_serial: Serial number of a Device (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.remove_device_with_http_info(device_serial, **kwargs)  # noqa: E501
+        else:
+            (data) = self.remove_device_with_http_info(device_serial, **kwargs)  # noqa: E501
+            return data
+
+    def remove_device_with_http_info(self, device_serial, **kwargs):  # noqa: E501
+        """Remove known Device  # noqa: E501
+
+        With this endpoint, you can remove a Device from list of known Devices. In order to remove the Device, you have to make it active again with `POST` request to `/api/v2//devices/{deviceSerial}/active`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.remove_device_with_http_info(device_serial, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str device_serial: Serial number of a Device (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['device_serial']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_device" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'device_serial' is set
+        if ('device_serial' not in params or
+                params['device_serial'] is None):
+            raise ValueError("Missing the required parameter `device_serial` when calling `remove_device`")  # noqa: E501
+
+        if 'device_serial' in params and not re.search('^[0-9A-Za-z-_.]{1,36}$', params['device_serial']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `device_serial` when calling `remove_device`, must conform to the pattern `/^[0-9A-Za-z-_.]{1,36}$/`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'device_serial' in params:
+            path_params['deviceSerial'] = params['device_serial']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json;charset=UTF-8'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['AuthorizationHeader']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/devices/{deviceSerial}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

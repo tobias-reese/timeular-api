@@ -1,6 +1,6 @@
 # timular-api.TimeTrackingTimeEntriesApi
 
-All URIs are relative to *https://api.timeular.com/api/v1/*
+All URIs are relative to *https://api.timeular.com/api/v2/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create Time Entry
 
-With this endpoint you can create a new Time Entry. It should be connected to an Activity and have duration no shorter than 1 minute. Note can be provided too, but it's not required. You can provide one or more Tags and Mentions in a Note, each of them prefixed with `#` or `@`. If related Activity is bound to some Integration, let's say JIRA Project, JIRA task IDs is a valid Tag too. Time Entry will be created even if it overlaps with other Time Entries – in result existing Time Entries will be split or deleted in such manner, that new one will fit without overlapping.
+With this endpoint, you can create a new Time Entry. It should be connected to an Activity and have a duration no shorter than 1 minute. A Note can be provided too, but it's not required. Within this Note, you can  refer one or more Tags or Mentions, each of the prefixes must be  configured with the start and the end index within the Note text and can be  defined with a key. If key is not defined a random id will be generated and  assigned. If you are referring to an existing Tag or Mention you can provide that key  but the content of the Tag or Mention must be the same.  If the related Activity is bound to some Integration, let's say JIRA Project, JIRA task IDs is a valid Tag too. Time Entry will be created even if it overlaps with other Time Entries – in result existing Time Entries will be split or deleted in such manner, that new one will fit without overlapping.
 
 ### Example
 ```python
@@ -86,7 +86,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = timular-api.TimeTrackingTimeEntriesApi(timular-api.ApiClient(configuration))
-time_entry_id = 'time_entry_id_example' # str | ID of an Activity, eg. `987`
+time_entry_id = 'time_entry_id_example' # str | ID of a Time Entry, eg. `987`
 
 try:
     # Delete a Time Entry
@@ -100,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **time_entry_id** | **str**| ID of an Activity, eg. &#x60;987&#x60; | 
+ **time_entry_id** | **str**| ID of a Time Entry, eg. &#x60;987&#x60; | 
 
 ### Return type
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 Edit a Time Entry
 
-With this endpoint you can edit existing Time Entry. When changing Activity ID please note, that both new and old Activity attached to Time Entry have to belong to same Integration.
+With this endpoint you can edit existing Time Entry. When changing Activity ID please note, that both new and old Activity attached to Time Entry have to belong to same Integration. To remove a Note, just set the complete object to null and all values  within the object will be deleted too.
 
 ### Example
 ```python
@@ -140,7 +140,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = timular-api.TimeTrackingTimeEntriesApi(timular-api.ApiClient(configuration))
-time_entry_id = 'time_entry_id_example' # str | ID of an Activity, eg. `987`
+time_entry_id = 'time_entry_id_example' # str | ID of a Time Entry, eg. `987`
 properties_to_change = timular-api.TimeEntryEditionRequest() # TimeEntryEditionRequest | properties to change (optional)
 
 try:
@@ -155,7 +155,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **time_entry_id** | **str**| ID of an Activity, eg. &#x60;987&#x60; | 
+ **time_entry_id** | **str**| ID of a Time Entry, eg. &#x60;987&#x60; | 
  **properties_to_change** | [**TimeEntryEditionRequest**](TimeEntryEditionRequest.md)| properties to change | [optional] 
 
 ### Return type
@@ -250,7 +250,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = timular-api.TimeTrackingTimeEntriesApi(timular-api.ApiClient(configuration))
-time_entry_id = 'time_entry_id_example' # str | ID of an Activity, eg. `987`
+time_entry_id = 'time_entry_id_example' # str | ID of a Time Entry, eg. `987`
 
 try:
     # Find Time Entry by its ID
@@ -264,7 +264,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **time_entry_id** | **str**| ID of an Activity, eg. &#x60;987&#x60; | 
+ **time_entry_id** | **str**| ID of a Time Entry, eg. &#x60;987&#x60; | 
 
 ### Return type
 

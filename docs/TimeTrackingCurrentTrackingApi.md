@@ -1,6 +1,6 @@
 # timular-api.TimeTrackingCurrentTrackingApi
 
-All URIs are relative to *https://api.timeular.com/api/v1/*
+All URIs are relative to *https://api.timeular.com/api/v2/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 Edit Tracking
 
-With this endpoint you can set/edit/remove Note of current Tracking. To remove Note set it to null/empty/blank value. You can provide one or more Tags and Mentions in a Note, each of them prefixed with `#` or `@`. If related Activity is bound to some Integration, let's say JIRA Project, JIRA task IDs are valid Tags too.
+With this endpoint, you can set/edit/remove Note of current Tracking. To remove a Note, just set the complete object to null and all values  within the object will be deleted too.
 
 ### Example
 ```python
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 Stop Tracking
 
-With this endpoint you can create a new Time Entry by stopping current time Tracking. Resulting Time Entry should have duration no shorter than 1 minute. Time Entry will be created even if it overlaps with other Time Entries – in result existing Time Entries will be split or deleted in such manner, that new one will fit without overlapping.
+With this endpoint, you can create a new Time Entry by stopping current time Tracking. Resulting Time Entry should have duration no shorter than 1 minute. The new Time Entry will be created even if it overlaps with other Time Entries  – in result existing Time Entries will be split or deleted in such manner,  that new one will fit without overlapping.
 
 ### Example
 ```python

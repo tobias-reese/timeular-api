@@ -1,6 +1,6 @@
 # timular-api.TimeTrackingActivitiesApi
 
-All URIs are relative to *https://api.timeular.com/api/v1/*
+All URIs are relative to *https://api.timeular.com/api/v2/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**edit_activity**](TimeTrackingActivitiesApi.md#edit_activity) | **PATCH** /activities/{activityId} | Edit an Activity
 [**get_activities**](TimeTrackingActivitiesApi.md#get_activities) | **GET** /activities | List all Activities
 [**get_archived_activities**](TimeTrackingActivitiesApi.md#get_archived_activities) | **GET** /archived-activities | List all Archived Activities
-[**get_tags_and_mentions_of_activity**](TimeTrackingActivitiesApi.md#get_tags_and_mentions_of_activity) | **GET** /activities/{activityId}/tags-and-mentions | Fetch Tags &amp; Mentions of given Activity
 [**unassign_activity_from_device_side**](TimeTrackingActivitiesApi.md#unassign_activity_from_device_side) | **DELETE** /activities/{activityId}/device-side/{deviceSide} | Unassign an Activity from a Device Side
 
 
@@ -71,7 +70,7 @@ Name | Type | Description  | Notes
 
 Assign an Activity to Device Side
 
-With this endpoint you can assign an Activity to any Side of your *active* Device. We do not know how many Sides does your Device have and which ones are valid (the default ZEI° has 8 sides numbered from 1 to 8). In order to activate your Device, make `POST` request to `/api/v1/devices/{deviceSerial}/active`.
+With this endpoint you can assign an Activity to any Side of your *active* Device. We do not know how many Sides does your Device have and which ones are valid (the default ZEI° has 8 sides numbered from 1 to 8). In order to activate your Device, make `POST` request to `/api/v2/devices/{deviceSerial}/active`.
 
 ### Example
 ```python
@@ -127,7 +126,7 @@ Name | Type | Description  | Notes
 
 Create an Activity
 
-With this endpoint you can create a new Activity. It should have name and color. Name doesn't have to be unique. You can also provide Integration to which Activity will belong (`zei` by default, which means no special Integration). You can obtain list of enabled Integrations by making `GET` request to `/api/v1/integrations`.
+With this endpoint, you can create a new Activity. It should have name and color. A Name doesn't have to be unique. You can also, provide an Integration to which the Activity will belong to (`zei` is the default value, which means no special Integration). You can obtain list of enabled Integrations by making `GET` request to `/api/v2/integrations`.
 
 ### Example
 ```python
@@ -326,66 +325,12 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_tags_and_mentions_of_activity**
-> TagsAndMentionsResponse get_tags_and_mentions_of_activity(activity_id)
-
-Fetch Tags & Mentions of given Activity
-
-Tags and Mentions are created with use of `#` and `@` prefixes in Notes of your Time Entries. Moreover if an Activity is linked with Integration, let's say JIRA Project, JIRA task IDs are visible as Tags. With this endpoint you can fetch all Tags and Mentions valid in context of given Activity. In this API version each Tag/Mention has ID only, while Labels are nulls.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import timular-api
-from timular-api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: AuthorizationHeader
-configuration = timular-api.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = timular-api.TimeTrackingActivitiesApi(timular-api.ApiClient(configuration))
-activity_id = 'activity_id_example' # str | ID of an Activity, eg. `123`
-
-try:
-    # Fetch Tags & Mentions of given Activity
-    api_response = api_instance.get_tags_and_mentions_of_activity(activity_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TimeTrackingActivitiesApi->get_tags_and_mentions_of_activity: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **activity_id** | **str**| ID of an Activity, eg. &#x60;123&#x60; | 
-
-### Return type
-
-[**TagsAndMentionsResponse**](TagsAndMentionsResponse.md)
-
-### Authorization
-
-[AuthorizationHeader](../README.md#AuthorizationHeader)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **unassign_activity_from_device_side**
 > ActivityConfigurationResponse unassign_activity_from_device_side(activity_id, device_side)
 
 Unassign an Activity from a Device Side
 
-With this endpoint you can unassign an Activity from Side of your active Device. In order to activate proper Device, make `POST` request to `/api/v1/devices/{deviceSerial}/active`.
+With this endpoint, you can delete an assignment of an Activity from a Side of  your active Device. In order to activate one proper Device, make a `POST`  request to `/api/v2/devices/{deviceSerial}/active`.
 
 ### Example
 ```python

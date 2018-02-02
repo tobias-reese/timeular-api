@@ -3,7 +3,7 @@
 """
     Timeular Public API
 
-     Welcome to the documentation of Timeular Public API v1.  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `Bearer <your_access_token>` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
+     Welcome to the documentation of Timeular Public API v2. If you want to have a look at the older and deprecated API v1 please just click on the following link: [Timeular Public API v1](./?v=v1)  You can try all requests here, in documentation, with use of `Try it out` button (available in each endpoint description after folding it out).  Most of endpoints are secured. In order to access them you have to provide *Access Token*. To do so, click on `Authorize` button below and provide `'Bearer *your_access_token*'` as a value for `Authorization` request header. To obtain *Access Token* you have to sign-in with pair of *API Key* and *API Secret* first. API Key & API Secret can be generated on [Profile website](https://profile.timeular.com/#/app/) or, if you have Access Token already, with `POST` request to `/developer/api-access`.  **Warning:** authentication flow may change soon due to active development of Timeular and its API.  If you have any questions, please visit [Support page](http://support.timeular.com) and ask them there.  Happy API browsing!  # noqa: E501
 
     OpenAPI spec version: 1
     
@@ -133,7 +133,7 @@ class TimeTrackingActivitiesApi(object):
     def assign_activity_to_device_side(self, activity_id, device_side, **kwargs):  # noqa: E501
         """Assign an Activity to Device Side  # noqa: E501
 
-        With this endpoint you can assign an Activity to any Side of your *active* Device. We do not know how many Sides does your Device have and which ones are valid (the default ZEI° has 8 sides numbered from 1 to 8). In order to activate your Device, make `POST` request to `/api/v1/devices/{deviceSerial}/active`.  # noqa: E501
+        With this endpoint you can assign an Activity to any Side of your *active* Device. We do not know how many Sides does your Device have and which ones are valid (the default ZEI° has 8 sides numbered from 1 to 8). In order to activate your Device, make `POST` request to `/api/v2/devices/{deviceSerial}/active`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.assign_activity_to_device_side(activity_id, device_side, async=True)
@@ -156,7 +156,7 @@ class TimeTrackingActivitiesApi(object):
     def assign_activity_to_device_side_with_http_info(self, activity_id, device_side, **kwargs):  # noqa: E501
         """Assign an Activity to Device Side  # noqa: E501
 
-        With this endpoint you can assign an Activity to any Side of your *active* Device. We do not know how many Sides does your Device have and which ones are valid (the default ZEI° has 8 sides numbered from 1 to 8). In order to activate your Device, make `POST` request to `/api/v1/devices/{deviceSerial}/active`.  # noqa: E501
+        With this endpoint you can assign an Activity to any Side of your *active* Device. We do not know how many Sides does your Device have and which ones are valid (the default ZEI° has 8 sides numbered from 1 to 8). In order to activate your Device, make `POST` request to `/api/v2/devices/{deviceSerial}/active`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.assign_activity_to_device_side_with_http_info(activity_id, device_side, async=True)
@@ -242,7 +242,7 @@ class TimeTrackingActivitiesApi(object):
     def create_activity(self, **kwargs):  # noqa: E501
         """Create an Activity  # noqa: E501
 
-        With this endpoint you can create a new Activity. It should have name and color. Name doesn't have to be unique. You can also provide Integration to which Activity will belong (`zei` by default, which means no special Integration). You can obtain list of enabled Integrations by making `GET` request to `/api/v1/integrations`.  # noqa: E501
+        With this endpoint, you can create a new Activity. It should have name and color. A Name doesn't have to be unique. You can also, provide an Integration to which the Activity will belong to (`zei` is the default value, which means no special Integration). You can obtain list of enabled Integrations by making `GET` request to `/api/v2/integrations`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.create_activity(async=True)
@@ -264,7 +264,7 @@ class TimeTrackingActivitiesApi(object):
     def create_activity_with_http_info(self, **kwargs):  # noqa: E501
         """Create an Activity  # noqa: E501
 
-        With this endpoint you can create a new Activity. It should have name and color. Name doesn't have to be unique. You can also provide Integration to which Activity will belong (`zei` by default, which means no special Integration). You can obtain list of enabled Integrations by making `GET` request to `/api/v1/integrations`.  # noqa: E501
+        With this endpoint, you can create a new Activity. It should have name and color. A Name doesn't have to be unique. You can also, provide an Integration to which the Activity will belong to (`zei` is the default value, which means no special Integration). You can obtain list of enabled Integrations by making `GET` request to `/api/v2/integrations`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.create_activity_with_http_info(async=True)
@@ -613,109 +613,10 @@ class TimeTrackingActivitiesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_tags_and_mentions_of_activity(self, activity_id, **kwargs):  # noqa: E501
-        """Fetch Tags &amp; Mentions of given Activity  # noqa: E501
-
-        Tags and Mentions are created with use of `#` and `@` prefixes in Notes of your Time Entries. Moreover if an Activity is linked with Integration, let's say JIRA Project, JIRA task IDs are visible as Tags. With this endpoint you can fetch all Tags and Mentions valid in context of given Activity. In this API version each Tag/Mention has ID only, while Labels are nulls.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tags_and_mentions_of_activity(activity_id, async=True)
-        >>> result = thread.get()
-
-        :param async bool
-        :param str activity_id: ID of an Activity, eg. `123` (required)
-        :return: TagsAndMentionsResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
-            return self.get_tags_and_mentions_of_activity_with_http_info(activity_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_tags_and_mentions_of_activity_with_http_info(activity_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_tags_and_mentions_of_activity_with_http_info(self, activity_id, **kwargs):  # noqa: E501
-        """Fetch Tags &amp; Mentions of given Activity  # noqa: E501
-
-        Tags and Mentions are created with use of `#` and `@` prefixes in Notes of your Time Entries. Moreover if an Activity is linked with Integration, let's say JIRA Project, JIRA task IDs are visible as Tags. With this endpoint you can fetch all Tags and Mentions valid in context of given Activity. In this API version each Tag/Mention has ID only, while Labels are nulls.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tags_and_mentions_of_activity_with_http_info(activity_id, async=True)
-        >>> result = thread.get()
-
-        :param async bool
-        :param str activity_id: ID of an Activity, eg. `123` (required)
-        :return: TagsAndMentionsResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['activity_id']  # noqa: E501
-        all_params.append('async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_tags_and_mentions_of_activity" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'activity_id' is set
-        if ('activity_id' not in params or
-                params['activity_id'] is None):
-            raise ValueError("Missing the required parameter `activity_id` when calling `get_tags_and_mentions_of_activity`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'activity_id' in params:
-            path_params['activityId'] = params['activity_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json;charset=UTF-8'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['AuthorizationHeader']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/activities/{activityId}/tags-and-mentions', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='TagsAndMentionsResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async=params.get('async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def unassign_activity_from_device_side(self, activity_id, device_side, **kwargs):  # noqa: E501
         """Unassign an Activity from a Device Side  # noqa: E501
 
-        With this endpoint you can unassign an Activity from Side of your active Device. In order to activate proper Device, make `POST` request to `/api/v1/devices/{deviceSerial}/active`.  # noqa: E501
+        With this endpoint, you can delete an assignment of an Activity from a Side of  your active Device. In order to activate one proper Device, make a `POST`  request to `/api/v2/devices/{deviceSerial}/active`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.unassign_activity_from_device_side(activity_id, device_side, async=True)
@@ -738,7 +639,7 @@ class TimeTrackingActivitiesApi(object):
     def unassign_activity_from_device_side_with_http_info(self, activity_id, device_side, **kwargs):  # noqa: E501
         """Unassign an Activity from a Device Side  # noqa: E501
 
-        With this endpoint you can unassign an Activity from Side of your active Device. In order to activate proper Device, make `POST` request to `/api/v1/devices/{deviceSerial}/active`.  # noqa: E501
+        With this endpoint, you can delete an assignment of an Activity from a Side of  your active Device. In order to activate one proper Device, make a `POST`  request to `/api/v2/devices/{deviceSerial}/active`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.unassign_activity_from_device_side_with_http_info(activity_id, device_side, async=True)
