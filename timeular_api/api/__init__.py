@@ -1,0 +1,13 @@
+from __future__ import absolute_import
+
+# flake8: noqa
+
+# import apis into api package
+from timeular_api.api.authentication_api import AuthenticationApi
+from timeular_api.api.integrations_api import IntegrationsApi
+from timeular_api.api.time_tracking__activities_api import TimeTrackingActivitiesApi
+from timeular_api.api.time_tracking__current_tracking_api import TimeTrackingCurrentTrackingApi
+from timeular_api.api.time_tracking__devices_api import TimeTrackingDevicesApi
+from timeular_api.api.time_tracking__reports_api import TimeTrackingReportsApi
+from timeular_api.api.time_tracking__tags__mentions_api import TimeTrackingTagsMentionsApi
+from timeular_api.api.time_tracking__time_entries_api import TimeTrackingTimeEntriesApi

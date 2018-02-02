@@ -1,4 +1,4 @@
-# timular_api.AuthenticationApi
+# timeular_api.AuthenticationApi
 
 All URIs are relative to *https://api.timeular.com/api/v2/*
 
@@ -20,13 +20,13 @@ With this endpoint you can obtain Access Token required to access secured endpoi
 ```python
 from __future__ import print_function
 import time
-import timular_api
-from timular_api.rest import ApiException
+import timeular_api
+from timeular_api.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = timular_api.AuthenticationApi()
-api_key_and_api_secret = timular_api.DeveloperSignInRequest() # DeveloperSignInRequest | API Key and API Secret (optional)
+api_instance = timeular_api.AuthenticationApi()
+api_key_and_api_secret = timeular_api.DeveloperSignInRequest() # DeveloperSignInRequest | API Key and API Secret (optional)
 
 try:
     # Sign-in with API Key & API Secret
@@ -68,18 +68,18 @@ With this endpoint you can generate a new pair of API Key & API Secret. Every ti
 ```python
 from __future__ import print_function
 import time
-import timular_api
-from timular_api.rest import ApiException
+import timeular_api
+from timeular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular_api.Configuration()
+configuration = timeular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular_api.AuthenticationApi(timular_api.ApiClient(configuration))
+api_instance = timeular_api.AuthenticationApi(timeular_api.ApiClient(configuration))
 
 try:
     # Generate new API Key & API Secret
@@ -118,18 +118,18 @@ With this endpoint you can fetch your API Key (or `null` if you haven't generate
 ```python
 from __future__ import print_function
 import time
-import timular_api
-from timular_api.rest import ApiException
+import timeular_api
+from timeular_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: AuthorizationHeader
-configuration = timular_api.Configuration()
+configuration = timeular_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = timular_api.AuthenticationApi(timular_api.ApiClient(configuration))
+api_instance = timeular_api.AuthenticationApi(timeular_api.ApiClient(configuration))
 
 try:
     # Fetch API Key

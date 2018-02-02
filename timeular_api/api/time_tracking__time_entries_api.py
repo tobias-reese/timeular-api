@@ -18,7 +18,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from timular_api.api_client import ApiClient
+from timeular_api.api_client import ApiClient
 
 
 class TimeTrackingTimeEntriesApi(object):
