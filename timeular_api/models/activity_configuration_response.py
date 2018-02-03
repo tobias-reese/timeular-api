@@ -131,7 +131,7 @@ class ActivityConfigurationResponse(object):
         :param color: The color of this ActivityConfigurationResponse.  # noqa: E501
         :type: str
         """
-        if color is not None and not re.search('(^[0-9abcdefABCDEF]{6}$)|(^[0-9abcdefABCDEF]{3}$)', color):  # noqa: E501
+        if color is not None and not re.search('(^#[0-9abcdefABCDEF]{6}$)|(^[0-9abcdefABCDEF]{3}$)', color):  # noqa: E501
             raise ValueError("Invalid value for `color`, must be a follow pattern or equal to `/(^[0-9abcdefABCDEF]{6}$)|(^[0-9abcdefABCDEF]{3}$)/`")  # noqa: E501
 
         self._color = color
